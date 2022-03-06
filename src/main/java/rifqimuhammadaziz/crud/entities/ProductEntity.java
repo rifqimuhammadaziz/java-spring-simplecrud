@@ -1,11 +1,13 @@
 package rifqimuhammadaziz.crud.entities;
 
+import rifqimuhammadaziz.crud.audit.AuditableBase;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "product")
-public class ProductEntity {
+public class ProductEntity extends AuditableBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

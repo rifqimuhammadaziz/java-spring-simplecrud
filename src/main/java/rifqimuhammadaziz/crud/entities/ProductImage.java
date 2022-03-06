@@ -1,9 +1,11 @@
 package rifqimuhammadaziz.crud.entities;
 
+import rifqimuhammadaziz.crud.audit.AuditableBase;
+
 import javax.persistence.*;
 
 @Entity
-public class ProductImage {
+public class ProductImage extends AuditableBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
