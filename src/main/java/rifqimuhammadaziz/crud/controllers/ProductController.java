@@ -8,6 +8,7 @@ import rifqimuhammadaziz.crud.repositories.ProductRepository;
 import rifqimuhammadaziz.crud.response.CommonResponse;
 import rifqimuhammadaziz.crud.response.CommonResponseGenerator;
 import rifqimuhammadaziz.crud.services.ProductService;
+import rifqimuhammadaziz.crud.wrapper.ProductImageWrapper;
 
 import java.util.List;
 
@@ -78,8 +79,13 @@ public class ProductController {
     }
 
     @PostMapping(value = "upload-product")
-    public CommonResponse<ProductImage> upload() {
-
+    public CommonResponse<ProductImage> upload(@RequestBody ProductImageWrapper productImage) {
+        try {
+            ProductImage product = productService.upload(productImage);
+            return commonResponseGenerator.successResponse(product, "Success upload image");
+        } catch (Exception e) {
+            return commonResponseGenerator.failedResponse(e.getMessage());
+        }
     }
 
 }

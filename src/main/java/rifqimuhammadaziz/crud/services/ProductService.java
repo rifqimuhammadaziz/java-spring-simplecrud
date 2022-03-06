@@ -2,7 +2,9 @@ package rifqimuhammadaziz.crud.services;
 
 import org.springframework.stereotype.Component;
 import rifqimuhammadaziz.crud.entities.ProductEntity;
+import rifqimuhammadaziz.crud.entities.ProductImage;
 import rifqimuhammadaziz.crud.response.CommonResponse;
+import rifqimuhammadaziz.crud.wrapper.ProductImageWrapper;
 
 import java.util.List;
 
@@ -18,4 +20,6 @@ public interface ProductService {
     ProductEntity update(ProductEntity product);
 
     void delete(int id);
+
+    ProductImage upload(ProductImageWrapper productImageWrapper);
 }
